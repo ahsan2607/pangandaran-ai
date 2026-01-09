@@ -1,9 +1,9 @@
 import { Flex, IconButton, Input } from "@chakra-ui/react";
 import { LuMic, LuSendHorizontal } from "react-icons/lu";
+import { RecordingPanel } from ".";
 import React from "react";
-import RecordingPanel from "./RecordingPanel";
 
-interface Props {
+interface ChatInputProps {
   footerHeight: string;
   isRecording: boolean;
   isRecordingPanel: boolean;
@@ -12,7 +12,7 @@ interface Props {
   handleStopRecording: () => void;
 }
 
-const ChatInput: React.FC<Props> = ({
+export const ChatInput: React.FC<ChatInputProps> = ({
   footerHeight,
   isRecording,
   isRecordingPanel,
@@ -39,12 +39,7 @@ const ChatInput: React.FC<Props> = ({
             _active={{ border: "none", outline: "none", boxShadow: "none" }}
             _focusVisible={{ border: "none", outline: "none", boxShadow: "none" }}
           />
-          <IconButton
-            aria-label="Microphone"
-            variant="ghost"
-            color="primary"
-            onClick={() => setIsRecordingPanel(true)}
-          >
+          <IconButton aria-label="Microphone" variant="ghost" color="primary" onClick={() => setIsRecordingPanel(true)}>
             <LuMic />
           </IconButton>
         </Flex>
@@ -55,5 +50,3 @@ const ChatInput: React.FC<Props> = ({
     )}
   </Flex>
 );
-
-export default ChatInput;

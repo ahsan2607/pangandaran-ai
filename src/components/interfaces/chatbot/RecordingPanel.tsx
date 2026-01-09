@@ -2,13 +2,13 @@ import { Flex, Text, Button } from "@chakra-ui/react";
 import { LuMic } from "react-icons/lu";
 import React from "react";
 
-interface Props {
+interface RecordingPanelProps {
   isRecording: boolean;
   handleStartRecording: () => void;
   handleStopRecording: () => void;
 }
 
-const RecordingPanel: React.FC<Props> = ({ isRecording, handleStartRecording, handleStopRecording }) => (
+export const RecordingPanel: React.FC<RecordingPanelProps> = ({ isRecording, handleStartRecording, handleStopRecording }) => (
   <Flex
     flex="1"
     bg={isRecording ? "white" : "gray.100"}
@@ -40,5 +40,3 @@ const RecordingPanel: React.FC<Props> = ({ isRecording, handleStartRecording, ha
     </Button>
   </Flex>
 );
-
-export default RecordingPanel;

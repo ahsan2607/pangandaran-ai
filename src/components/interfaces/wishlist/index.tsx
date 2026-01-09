@@ -1,0 +1,1 @@
+export { WishlistInterface } from "./WishlistInterface";

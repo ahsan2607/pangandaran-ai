@@ -3,7 +3,11 @@ import { FaRobot } from "react-icons/fa6";
 import { IoSparkles } from "react-icons/io5";
 import React from "react";
 
-const ChatInitDisplay = ({ footerHeight }: { footerHeight: string }) => (
+interface FooterHeightProps {
+  footerHeight: string;
+}
+
+export const ChatInitDisplay: React.FC<FooterHeightProps> = ({ footerHeight }) => (
   <Flex align="center" py={4} pb={`calc(${footerHeight} + 8px)`} flexDirection="column" gap={4}>
     <FaRobot size={150} />
     <Flex bg="gray.200" width="100%" align="center" p={2} borderRadius="xl" gap={2}>
@@ -28,15 +32,7 @@ const ChatInitDisplay = ({ footerHeight }: { footerHeight: string }) => (
           "Dimana lokasi money changer di pangandaran?",
           "Berikan daftar pantai-pantai yang ada di pangandaran",
         ].map((q, i) => (
-          <List.Item
-            key={i}
-            border="1px solid"
-            borderColor="secondary"
-            py={1}
-            px={2}
-            rounded="2xl"
-            fontSize="xs"
-          >
+          <List.Item key={i} border="1px solid" borderColor="secondary" py={1} px={2} rounded="2xl" fontSize="xs">
             {q}
           </List.Item>
         ))}
@@ -44,5 +40,3 @@ const ChatInitDisplay = ({ footerHeight }: { footerHeight: string }) => (
     </Flex>
   </Flex>
 );
-
-export default ChatInitDisplay;

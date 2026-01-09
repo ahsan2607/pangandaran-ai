@@ -1,4 +1,5 @@
 // Static data and UI constants
+import { FaHouse, FaBookmark, FaRobot, FaUser } from "react-icons/fa6";
 
 export const FOOTER_HEIGHT = "72px";
 
@@ -16,8 +17,8 @@ export const BEACH_CARDS = [
 ];
 
 export const FOOTER_MENU_ITEMS = [
-  { iconName: "FaHouse", label: "Home" },
-  { iconName: "FaBookmark", label: "Saved" },
-  { iconName: "FaRobot", label: "Chatbot" },
-  { iconName: "FaUser", label: "Profile" },
+  { icon: <FaHouse />, label: "Home", href: "/home" },
+  { icon: <FaBookmark />, label: "Saved", href: "/wishlist" },
+  { icon: <FaRobot />, label: "Chatbot", href: "/chatbot" },
+  { icon: <FaUser />, label: "Profile", href: "/profile" },
 ];

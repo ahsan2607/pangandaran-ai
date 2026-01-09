@@ -1,0 +1,57 @@
+// src/utils/data/dummyMessage.ts
+import { MessageWithDetails } from "@/types";
+
+export const dummyMessage: MessageWithDetails = {
+  title: "Liburan akhir pekan ke Pangandaran",
+  message_uuid: "msg-aaaa-1111-bbbb-2222",
+  session_uuid: "sess-1234-abcd-5678-efgh",
+  created_at: "2026-01-08T10:05:00Z",
+  updated_at: "2026-01-08T16:15:00Z",
+  is_delete: false,
+  details: [
+    {
+      user_name: "Rina Wijaya",
+      bot_model: null,
+      message: "Hai! Aku mau liburan ke Pangandaran akhir pekan ini bareng keluarga. Bisa bantu rekomendasi tempat wisata dan penginapan?",
+      type: "Text",
+      request: "Question",
+      message_detail_uuid: "md-001",
+      message_uuid: "msg-aaaa-1111-bbbb-2222",
+      created_at: "2026-01-08T10:06:00Z",
+      is_delete: false,
+    },
+    {
+      user_name: null,
+      bot_model: "grok-4",
+      message: "Halo Rina! Senang bisa bantu rencanakan liburan ke Pangandaran 🌊\n\nPangandaran punya banyak pantai indah dan aktivitas seru untuk keluarga. Berikut beberapa pantai populer yang wajib dikunjungi:",
+      type: "Recommendation",
+      request: "Answer",
+      message_detail_uuid: "md-002",
+      message_uuid: "msg-aaaa-1111-bbbb-2222",
+      created_at: "2026-01-08T10:07:00Z",
+      is_delete: false,
+    },
+    {
+      user_name: "Rina Wijaya",
+      bot_model: null,
+      message: "Wah menarik! Pantai mana yang paling ramah anak ya?",
+      type: "Text",
+      request: "Question",
+      message_detail_uuid: "md-003",
+      message_uuid: "msg-aaaa-1111-bbbb-2222",
+      created_at: "2026-01-08T10:10:00Z",
+      is_delete: false,
+    },
+    {
+      user_name: null,
+      bot_model: "grok-4",
+      message: "Untuk keluarga dengan anak-anak, saya paling rekomendasikan **Pantai Pangandaran** dan **Pantai Batu Karas**.\n\n- Pantai Pangandaran: ombak tenang di area timur, banyak pedagang makanan, dan ada taman bermain kecil.\n- Batu Karas: ombak lebih kecil, cocok untuk anak belajar berenang atau bodyboarding.\n\nHindari Pantai Batu Hiu kalau anak masih kecil karena ombaknya cukup besar ya!",
+      type: "Text",
+      request: "Answer",
+      message_detail_uuid: "md-004",
+      message_uuid: "msg-aaaa-1111-bbbb-2222",
+      created_at: "2026-01-08T10:12:00Z",
+      is_delete: false,
+    },
+  ],
+};

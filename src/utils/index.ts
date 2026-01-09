@@ -1,3 +1,3 @@
 export * from "./chat";
-export * from "./data";
+export * from "./data/data";
 export * from "./recording";
