@@ -31,3 +31,7 @@ export const dummyWishLists: WishList[] = [
     attraction: dummyAttractions[3],
   },
 ];
+
+export const sortedWishlists = [...dummyWishLists].sort(
+  (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+);

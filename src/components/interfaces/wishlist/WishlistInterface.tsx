@@ -1,27 +1,20 @@
-// src/components/interfaces/wishlist/WishlistInterface.tsx 
+// src/components/interfaces/wishlist/WishlistInterface.tsx
+"use client";
+import { useRouter } from "next/navigation";
 import { Box, Text, List, Separator, Flex } from "@chakra-ui/react";
 import { FaStar } from "react-icons/fa6";
-import { dummyWishLists } from "@/utils/data";
+import { sortedWishlists } from "@/utils/data";
 import React from "react";
-
-// Helper untuk format tanggal Indonesia
-const formatDate = (isoString: string): string => {
-  return new Date(isoString).toLocaleDateString("id-ID", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-};
+import { formatDate } from "@/utils/helper";
 
 export const WishlistInterface: React.FC = () => {
   // Urutkan dari yang paling baru ditambahkan
-  const sortedWishlists = [...dummyWishLists].sort(
-    (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
-  );
-
+  const router = useRouter();
   return (
     <Box px={3} py={6}>
-      <Text fontWeight="bold" fontSize="xl">Daftar rute yang disimpan</Text>
+      <Text fontWeight="bold" fontSize="xl">
+        Daftar rute yang disimpan
+      </Text>
 
       <List.Root>
         {sortedWishlists.map((wishlist, index) => {
@@ -30,7 +23,11 @@ export const WishlistInterface: React.FC = () => {
 
           return (
             <React.Fragment key={wishlist.wish_list_uuid}>
-              <List.Item my={4}>
+              <List.Item
+                my={4}
+                onClick={() => router.push(`/attraction/${attraction.attraction_uuid}`)}
+                cursor="pointer"
+              >
                 <Flex gap={2} align="center">
                   <Box
                     p={3}
@@ -57,24 +54,13 @@ export const WishlistInterface: React.FC = () => {
                       </Flex>
                       <Text fontSize="sm">100 Ulasan</Text>
                     </Flex>
-                    <Text fontSize="xs">
-                      {attraction.address}
-                    </Text>
+                    <Text fontSize="xs">{attraction.address}</Text>
                     <Text fontWeight="bold" fontSize="md">
                       {isVisited ? "Sudah dikunjungi" : "Belum dikunjungi"}
                     </Text>
                     <Box mt={4}>
-                      <Flex
-                        mt="0.25rem"
-                        justify="center"
-                        p={1}
-                        borderWidth={1}
-                        borderColor="gray"
-                        borderRadius="md"
-                      >
-                        <Text fontSize="xs">
-                          Ditambahkan pada {formatDate(wishlist.created_at)}
-                        </Text>
+                      <Flex mt="0.25rem" justify="center" p={1} borderWidth={1} borderColor="gray" borderRadius="md">
+                        <Text fontSize="xs">Ditambahkan pada {formatDate(wishlist.created_at)}</Text>
                       </Flex>
                     </Box>
                   </Box>
